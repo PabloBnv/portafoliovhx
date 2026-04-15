@@ -11,28 +11,28 @@ const GithubIcon = () => (
 const Projects = () => {
   const projects = [
     {
-      title: 'Sistema POS Industrial',
-      description: 'Plataforma de gestión para fábricas de conservas con arquitectura de doble canal (Retail/Mayorista) y control de stock en tiempo real.',
-      tech: ['Java', 'Spring Boot', 'React', 'MySQL', 'Docker'],
-      github: '#',
-      demo: '#',
-      image: 'pos'
-    },
-    {
-      title: 'Sabores Andinos E-commerce',
-      description: 'Tienda online de productos regionales con integración de SSO cross-domain y catálogo dinámico de alta disponibilidad.',
-      tech: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Vercel'],
-      github: '#',
+      title: 'Ecommerce Genérico',
+      description: 'Plataforma de comercio electrónico con catálogo de productos, carrito de compras y gestión de pedidos en tiempo real.',
+      tech: ['React', 'TypeScript', 'Java', 'Spring Boot'],
+      github: 'https://github.com/PabloBnv/ecommerce-generico',
       demo: '#',
       image: 'ecommerce'
     },
     {
-      title: 'NexTask Manager',
-      description: 'Herramienta colaborativa de gestión de tareas con actualizaciones en tiempo real y dashboard analítico interactivo.',
-      tech: ['React', 'Context API', 'Java', 'Spring Security', 'AWS'],
+      title: 'ERP Genérico',
+      description: 'Sistema de planificación de recursos empresariales con gestión de inventario, ventas y reportes analíticos.',
+      tech: ['React', 'TypeScript', 'Java', 'Spring Boot'],
       github: '#',
       demo: '#',
-      image: 'task'
+      image: 'erp'
+    },
+    {
+      title: 'CRM Genérico',
+      description: 'Gestión de relaciones con clientes con seguimiento de leads, oportunidades y automatización de ventas.',
+      tech: ['React', 'TypeScript', 'Java', 'Spring Boot'],
+      github: '#',
+      demo: '#',
+      image: 'crm'
     }
   ];
 
