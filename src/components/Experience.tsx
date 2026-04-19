@@ -1,7 +1,34 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './Experience.module.css';
 
 const Experience = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [itemsVisible, setItemsVisible] = useState<boolean[]>([false, false, false]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setTimeout(() => {
+            setItemsVisible([true, true, true]);
+          }, 300);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const experiences = [
     {
       company: 'SuSeSo',
@@ -27,13 +54,22 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className={styles.experience}>
+    <section id="experience" className={styles.experience} ref={sectionRef}>
       <div className="container">
-        <h2 className={styles.title}>Mi <span className="gradient-text">Experiencia</span></h2>
+        <h2 className={`${styles.title} ${isVisible ? styles.visible : ''}`}>
+          Mi <span className="gradient-text">Experiencia</span>
+        </h2>
+        <p className={`${styles.subtitle} ${isVisible ? styles.visible : ''}`}>
+          Mi trayectoria profesional a lo largo de los años
+        </p>
         
         <div className={styles.timeline}>
           {experiences.map((exp, index) => (
-            <div key={index} className={styles.item}>
+            <div 
+              key={index} 
+              className={`${styles.item} ${itemsVisible[index] ? styles.visible : styles.hidden}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
               <div className={styles.dot}></div>
               <div className={styles.card}>
                 <span className={styles.period}>{exp.period}</span>

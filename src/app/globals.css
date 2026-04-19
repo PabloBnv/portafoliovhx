@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
   --background: #0a0a0c;
+  --background-alt: #0d0d10;
   --surface: rgba(22, 22, 26, 0.7);
   --surface-border: rgba(255, 255, 255, 0.1);
+  --surface-border-hover: rgba(255, 255, 255, 0.15);
   --primary: #3b82f6;
+  --primary-hover: #2563eb;
   --primary-glow: rgba(59, 130, 246, 0.5);
   --secondary: #8b5cf6;
+  --secondary-glow: rgba(139, 92, 246, 0.4);
   --text-main: #f3f4f6;
   --text-dim: #9ca3af;
+  --text-dim-light: #6b7280;
   --glass: blur(12px);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
   --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 * {
@@ -28,6 +38,8 @@ body {
   color: var(--text-main);
   font-family: 'Outfit', sans-serif;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -55,17 +67,42 @@ button {
 
 section {
   padding: 8rem 0;
+  position: relative;
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Gradient Text */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(139, 92, 246, 0.6));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -77,13 +114,47 @@ h1, h2, h3, h4 {
   backdrop-filter: var(--glass);
   -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--surface-border);
-  border-radius: 1.5rem;
+  border-radius: var(--radius-xl);
+}
+
+.glow-on-hover {
+  transition: var(--transition);
 }
 
 .glow-on-hover:hover {
-  box-shadow: 0 0 20px var(--primary-glow);
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--primary-glow), 0 0 50px rgba(59, 130, 246, 0.2);
+  transform: translateY(-4px);
   border-color: var(--primary);
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: var(--text-main);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
 }
 
 /* Animations */
@@ -92,17 +163,56 @@ h1, h2, h3, h4 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .animate-in {
   animation: fadeIn 0.8s ease forwards;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-dim {
+  color: var(--text-dim);
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
   section {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
   
   .container {
     padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.25rem;
   }
 }

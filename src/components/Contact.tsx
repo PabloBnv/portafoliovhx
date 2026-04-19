@@ -1,5 +1,7 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Send, Link, Globe } from 'lucide-react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import styles from './Contact.module.css';
 
 const GithubIcon = () => (
@@ -21,15 +23,40 @@ const XIcon = () => (
 );
 
 const Contact = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={styles.contact} ref={sectionRef}>
       <div className="container">
-        <h2 className={styles.title}>Hablemos de tu <span className="gradient-text">Proyecto</span></h2>
+        <h2 className={`${styles.title} ${isVisible ? styles.visible : ''}`}>
+          Hablemos de tu <span className="gradient-text">Proyecto</span>
+        </h2>
         
         <div className={styles.grid}>
-          <div className={styles.info}>
-            <p className={styles.subtitle}>
-              ¿Tienes una idea en mente o simplemente quieres saludar? Mi buzón siempre está abierto.
+          <div className={`${styles.info} ${isVisible ? styles.visible : ''}`}>
+            <p className={styles.subtitleText}>
+              ¿Tienes una idea en mente o simplemente quieres saludar? 
+              Mi buzón siempre está abierto. Me encantaría escuchar sobre tu proyecto 
+              y explorar cómo puedo ayudarte a hacerlo realidad.
             </p>
             
             <div className={styles.meta}>
@@ -50,24 +77,50 @@ const Contact = () => {
             </div>
 
             <div className={styles.socials}>
-              <a href="#" className={styles.socialLink}><GithubIcon /></a>
-              <a href="#" className={styles.socialLink}><LinkedinIcon /></a>
-              <a href="#" className={styles.socialLink}><XIcon /></a>
+              <a href="https://github.com/PabloBnv" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <GithubIcon />
+              </a>
+              <a href="#" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <LinkedinIcon />
+              </a>
+              <a href="#" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <XIcon />
+              </a>
             </div>
           </div>
 
-          <form className={styles.form} onClick={(e) => e.preventDefault()}>
+          <form className={`${styles.form} ${isVisible ? styles.visible : ''}`} onSubmit={(e) => e.preventDefault()}>
             <div className={styles.formGroup}>
-              <input type="text" placeholder="Tu Nombre" required />
+              <label htmlFor="name">Nombre</label>
+              <input 
+                type="text" 
+                id="name"
+                placeholder="Tu nombre" 
+                required 
+              />
             </div>
             <div className={styles.formGroup}>
-              <input type="email" placeholder="Tu Email" required />
+              <label htmlFor="email">Email</label>
+              <input 
+                type="email" 
+                id="email"
+                placeholder="tu@email.com" 
+                required 
+              />
             </div>
             <div className={styles.formGroup}>
-              <textarea placeholder="Tu Mensaje" rows={5} required></textarea>
+              <label htmlFor="message">Mensaje</label>
+              <textarea 
+                id="message"
+                placeholder="Cuéntame sobre tu proyecto..." 
+                rows={5} 
+                required
+              />
             </div>
             <button type="submit" className={styles.submitBtn}>
-              Enviar Mensaje <Send size={18} />
+              <span className={styles.buttonText}>
+                Enviar Mensaje <Send size={18} />
+              </span>
             </button>
           </form>
         </div>

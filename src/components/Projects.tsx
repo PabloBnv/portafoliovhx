@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Folder } from 'lucide-react';
 import styles from './Projects.module.css';
 
@@ -9,6 +11,31 @@ const GithubIcon = () => (
 );
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState<boolean[]>([false, false, false]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setTimeout(() => {
+            setCardsVisible([true, true, true]);
+          }, 300);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       title: 'Ecommerce Genérico',
@@ -37,18 +64,31 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="projects" className={styles.projects} ref={sectionRef}>
       <div className="container">
-        <h2 className={styles.title}>Proyectos <span className="gradient-text">Destacados</span></h2>
+        <h2 className={`${styles.title} ${isVisible ? styles.visible : ''}`}>
+          Proyectos <span className="gradient-text">Destacados</span>
+        </h2>
+        <p className={`${styles.subtitle} ${isVisible ? styles.visible : ''}`}>
+          Algunos de los proyectos en los que he trabajado
+        </p>
         <div className={styles.grid}>
           {projects.map((project, index) => (
-            <div key={index} className={styles.card}>
+            <div 
+              key={index} 
+              className={`${styles.card} ${cardsVisible[index] ? styles.visible : styles.hidden}`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
               <div className={styles.imagePlaceholder}>
                 <Folder size={40} className={styles.folderIcon} />
                 <div className={styles.projectOverlay}>
                   <div className={styles.overlayLinks}>
-                    <a href={project.github} aria-label="Github Repo"><GithubIcon /></a>
-                    <a href={project.demo} aria-label="Live Demo"><ExternalLink size={20} /></a>
+                    <a href={project.github} aria-label="Ver en GitHub" target="_blank" rel="noopener noreferrer">
+                      <GithubIcon />
+                    </a>
+                    <a href={project.demo} aria-label="Ver demo" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={20} />
+                    </a>
                   </div>
                 </div>
               </div>
