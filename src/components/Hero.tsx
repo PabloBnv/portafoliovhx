@@ -18,14 +18,6 @@ const Hero = () => {
       <div className={styles.gridPattern}></div>
       <div className="container">
         <div className={styles.content}>
-          <img 
-            src="/vhxlogo.gif" 
-            alt="Vhx Logo" 
-            className={styles.logo}
-            width={100}
-            height={100}
-            loading="eager"
-          />
           <p className={styles.overline}>Hola, mi nombre es</p>
           <h1 className={styles.title}>
             Pablo <span className="gradient-text">Benavente</span>
