@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vhx.suseso.net"),
+  metadataBase: new URL("https://portafoliovhx.netlify.app"),
   title: {
     default: "Vhx | Full-Stack Developer",
     template: "%s | Vhx",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Portafolio profesional de Pablo Benavente (Vhx), Desarrollador Full-Stack especializado en Java, React y aplicaciones escalables.",
     type: "website",
     locale: "es_AR",
-    url: "https://vhx.suseso.net",
+    url: "https://portafoliovhx.netlify.app",
     siteName: "Vhx Portfolio",
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: "@PabloBnv",
   },
   alternates: {
-    canonical: "https://vhx.suseso.net",
+    canonical: "https://portafoliovhx.netlify.app",
   },
   icons: {
     icon: "/favicon.png",

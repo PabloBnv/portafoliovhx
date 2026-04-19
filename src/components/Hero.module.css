@@ -75,7 +75,7 @@
   margin-bottom: 2rem;
   border: 2px solid rgba(59, 130, 246, 0.5);
   object-fit: cover;
-  animation: fadeInUp 1s ease-out 0.2s backwards;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
 }
 
@@ -89,7 +89,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  animation: fadeInUp 1s ease-out 0.3s backwards;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
 .overline::before {
@@ -105,7 +105,7 @@
   margin-bottom: 0.75rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  animation: fadeInUp 1s ease-out 0.4s backwards;
+  animation: fadeInUp 1s ease-out 0.4s forwards;
 }
 
 .subtitle {
@@ -114,7 +114,7 @@
   color: var(--text-dim);
   margin-bottom: 1.75rem;
   letter-spacing: 0.02em;
-  animation: fadeInUp 1s ease-out 0.5s backwards;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 .description {
@@ -123,8 +123,7 @@
   color: var(--text-dim);
   margin-bottom: 2.5rem;
   max-width: 560px;
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 0.6s backwards;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
 }
 
 .techStack {
