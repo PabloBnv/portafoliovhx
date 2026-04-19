@@ -28,6 +28,8 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 | 19/04/2026 | SEO URL | Corregido URL de metadata: vhx.suseso.net → portafoliovhx.netlify.app |
 | 19/04/2026 | Hero Animation | Cambiado `backwards` a `forwards` en animaciones (arregló texto invisible) |
 | 19/04/2026 | Turbopack | Forzado webpack con `--webpack` para evitar bug en Netlify |
+| 19/04/2026 | Logo Hero | Eliminado el logo del Hero (el usuario prefirió no mostrarlo) |
+| 19/04/2026 | Favicon | Eliminado src/app/favicon.ico por defecto para usar public/favicon.png |
 
 ### Deploy Actual
 - **URL**: https://portafoliovhx.netlify.app
