@@ -16,12 +16,6 @@ const LinkedinIcon = () => (
   </svg>
 );
 
-const XIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
-
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -64,7 +58,7 @@ const Contact = () => {
                 <div className={styles.iconWrapper}><Mail size={20} /></div>
                 <div>
                   <h4>Email</h4>
-                  <p>vhx@vhx.suseso.net</p>
+                  <p>bnvpablo@gmail.com</p>
                 </div>
               </div>
               <div className={styles.metaItem}>
@@ -80,11 +74,8 @@ const Contact = () => {
               <a href="https://github.com/PabloBnv" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <GithubIcon />
               </a>
-              <a href="#" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/pablo-benav-rom/" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <LinkedinIcon />
-              </a>
-              <a href="#" className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                <XIcon />
               </a>
             </div>
           </div>

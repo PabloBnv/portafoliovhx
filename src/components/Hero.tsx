@@ -22,6 +22,9 @@ const Hero = () => {
             src="/vhxlogo.gif" 
             alt="Vhx Logo" 
             className={styles.logo}
+            width={100}
+            height={100}
+            loading="eager"
           />
           <p className={styles.overline}>Hola, mi nombre es</p>
           <h1 className={styles.title}>
@@ -37,7 +40,7 @@ const Hero = () => {
             <a href="#projects" className={styles.primaryBtn}>
               Ver Proyectos <ArrowRight size={18} />
             </a>
-            <a href="/resume.pdf" className={styles.secondaryBtn}>
+            <a href="/CV-Pablo-Benavente.pdf" className={styles.secondaryBtn} target="_blank" rel="noopener noreferrer">
               Descargar CV <Download size={18} />
             </a>
           </div>
