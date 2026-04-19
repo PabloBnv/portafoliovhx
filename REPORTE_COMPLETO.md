@@ -1,12 +1,12 @@
 # REPORTE COMPLETO - Proyecto portafoliovhx
 
-## Fecha: 19 de Abril de 2026
+## Fecha: 19 de Abril de 2026 (Actualizado)
 
 ---
 
 ## RESUMEN EJECUTIVO
 
-El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos MVP (Minimum Viable Product). En esta sesión se actualizó la información de contacto, se agregó el CV, y se implementaron mejoras de UX/UI y SEO.
+El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos MVP (Minimum Viable Product). En esta sesión se actualizó la información de contacto, se agregó el CV, se implementaron mejoras de UX/UI y SEO, y se corrigieron bugs de despliegue.
 
 ---
 
@@ -15,8 +15,24 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 **GitHub**: `git@github.com:PabloBnv/portafoliovhx.git`
 **Tipo**: Proyecto Next.js 16 con React/TypeScript
 **Deploy**: Netlify
+**URL**: https://portafoliovhx.netlify.app
 
 ---
+
+## ÚLTIMOS CAMBIOS
+
+### Bug Fixes
+
+| Fecha | Cambio | Descripción |
+|-------|--------|-------------|
+| 19/04/2026 | SEO URL | Corregido URL de metadata: vhx.suseso.net → portafoliovhx.netlify.app |
+| 19/04/2026 | Hero Animation | Cambiado `backwards` a `forwards` en animaciones (arregló texto invisible) |
+| 19/04/2026 | Turbopack | Forzado webpack con `--webpack` para evitar bug en Netlify |
+
+### Deploy Actual
+- **URL**: https://portafoliovhx.netlify.app
+- **Build**: Exitoso con webpack
+- **Static Pages**: 4/4 generadas
 
 ## PROYECTOS MVP - SECCIÓN PORTAFOLIO
 
@@ -191,7 +207,7 @@ npm run lint
 - **Email**: bnvpablo@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/pablo-benav-rom/
 - **GitHub**: https://github.com/PabloBnv
-- **Web**: https://vhx.suseso.net
+- **Web**: https://portafoliovhx.netlify.app
 
 ---
 
