@@ -6,7 +6,7 @@
 
 ## RESUMEN EJECUTIVO
 
-El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos MVP (Minimum Viable Product). En esta sesión se actualizó la información de contacto, se agregó el CV, se implementaron mejoras de UX/UI y SEO, y se corrigieron bugs de despliegue.
+El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos MVP (Minimum Viable Product). Incluye chat en vivo con Tawk.to para contacto directo.
 
 ---
 
@@ -30,6 +30,13 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 | 19/04/2026 | Turbopack | Forzado webpack con `--webpack` para evitar bug en Netlify |
 | 19/04/2026 | Logo Hero | Eliminado el logo del Hero (el usuario prefirió no mostrarlo) |
 | 19/04/2026 | Favicon | Eliminado src/app/favicon.ico por defecto para usar public/favicon.png |
+
+### Nuevas Funcionalidades
+
+| Fecha | Cambio | Descripción |
+|-------|--------|-------------|
+| 19/04/2026 | Chat en Vivo | Integración de Tawk.to para contacto directo via chat |
+| 19/04/2026 | Habilidades | "Skills" → "Habilidades", agregado Tailwind y PostgreSQL |
 
 ### Deploy Actual
 - **URL**: https://portafoliovhx.netlify.app
@@ -149,9 +156,13 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 | `src/components/Hero.tsx` | Link al CV, optimización de imagen |
 | `src/app/layout.tsx` | next/font, metadata completa SEO |
 | `src/app/globals.css` | Variables de fuentes, scroll-behavior |
+| `src/app/page.tsx` | Agregado componente TawkTo |
 | `public/CV-Pablo-Benavente.pdf` | Nuevo archivo |
+| `src/components/TawkTo.tsx` | **Nuevo** - Widget de chat en vivo |
 | `next.config.ts` | Removida config turbopack.root |
 | `package.json` | build usa --webpack |
+| `src/components/Skills.tsx` | "Skills" → "Habilidades", agregado Tailwind y PostgreSQL |
+| `src/components/Hero.module.css` | Corregido animaciones (backwards → forwards) |
 
 ---
 
