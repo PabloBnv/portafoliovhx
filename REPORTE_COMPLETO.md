@@ -1,6 +1,6 @@
 # REPORTE COMPLETO - Proyecto portafoliovhx
 
-## Fecha: 19 de Abril de 2026 (Actualizado)
+## Fecha: 20 de Abril de 2026 (Actualizado)
 
 ---
 
@@ -25,6 +25,8 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Fecha | Cambio | Descripción |
 |-------|--------|-------------|
+| 20/04/2026 | LCP Optimization | Migrado Outfit de CSS externo a next/font/google |
+| 20/04/2026 | Lint Warning | Eliminado Code2 sin usar en Skills.tsx |
 | 19/04/2026 | SEO URL | Corregido URL de metadata: vhx.suseso.net → portafoliovhx.netlify.app |
 | 19/04/2026 | Hero Animation | Cambiado `backwards` a `forwards` en animaciones (arregló texto invisible) |
 | 19/04/2026 | Turbopack | Forzado webpack con `--webpack` para evitar bug en Netlify |
@@ -35,6 +37,7 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Fecha | Cambio | Descripción |
 |-------|--------|-------------|
+| 20/04/2026 | Font Optimization | Outfit ahora usa next/font/google (mejora LCP) |
 | 19/04/2026 | Chat en Vivo | Integración de Tawk.to para contacto directo via chat |
 | 19/04/2026 | Habilidades | "Skills" → "Habilidades", agregado Tailwind y PostgreSQL |
 
@@ -152,16 +155,16 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Archivo | Cambio |
 |---------|--------|
+| `src/app/layout.tsx` | Agregado Outfit via next/font/google |
+| `src/app/globals.css` | Eliminado @import Outfit, usado variable CSS |
+| `src/components/Skills.tsx` | Eliminado import Code2 sin usar |
 | `src/components/Contact.tsx` | Actualizado email, LinkedIn, eliminado X |
 | `src/components/Hero.tsx` | Link al CV, optimización de imagen |
-| `src/app/layout.tsx` | next/font, metadata completa SEO |
-| `src/app/globals.css` | Variables de fuentes, scroll-behavior |
 | `src/app/page.tsx` | Agregado componente TawkTo |
 | `public/CV-Pablo-Benavente.pdf` | Nuevo archivo |
 | `src/components/TawkTo.tsx` | **Nuevo** - Widget de chat en vivo |
 | `next.config.ts` | Removida config turbopack.root |
 | `package.json` | build usa --webpack |
-| `src/components/Skills.tsx` | "Skills" → "Habilidades", agregado Tailwind y PostgreSQL |
 | `src/components/Hero.module.css` | Corregido animaciones (backwards → forwards) |
 
 ---
@@ -224,4 +227,4 @@ npm run lint
 
 ---
 
-*Reporte actualizado: 19 de Abril de 2026*
+*Reporte actualizado: 20 de Abril de 2026*

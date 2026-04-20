@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Code2, Database, Layout, Terminal } from 'lucide-react';
+import { Database, Layout, Terminal } from 'lucide-react';
 import styles from './Skills.module.css';
 
 const Skills = () => {
