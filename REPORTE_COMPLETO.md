@@ -25,6 +25,7 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Fecha | Cambio | Descripción |
 |-------|--------|-------------|
+| 20/04/2026 | bfcache | Carga diferida de Tawk.to (3s o interacción) |
 | 20/04/2026 | Critical Path | Agregado preconnect/dns-prefetch para Tawk.to |
 | 20/04/2026 | CLS Optimization | Agregado font-size/line-height explícitos, min-height en Hero |
 | 20/04/2026 | LCP Optimization | Migrado Outfit de CSS externo a next/font/google |
@@ -157,6 +158,7 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Archivo | Cambio |
 |---------|--------|
+| `src/components/TawkTo.tsx` | Carga diferida (3s o interacción) para bfcache |
 | `src/app/layout.tsx` | Agregado preconnect/dns-prefetch para Tawk.to, Outfit |
 | `src/app/globals.css` | Agregado font-size/line-height explícitos para CLS |
 | `src/components/Hero.module.css` | Agregado min-height y 100dvh |
