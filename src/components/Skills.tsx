@@ -34,12 +34,12 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: <Layout size={28} />,
-      skills: ['React', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5 / CSS3', 'Bootstrap']
+      skills: ['React', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5 / CSS3', 'Tailwind', 'Bootstrap']
     },
     {
       title: 'Backend',
       icon: <Database size={28} />,
-      skills: ['Java', 'Spring Boot', 'Spring Data JPA', 'MySQL', 'Node.js', 'API REST']
+      skills: ['Java', 'Spring Boot', 'Spring Data JPA', 'MySQL', 'PostgreSQL', 'Node.js', 'API REST']
     },
     {
       title: 'Tools & Others',
@@ -52,7 +52,7 @@ const Skills = () => {
     <section id="skills" className={styles.skills} ref={sectionRef}>
       <div className="container">
         <h2 className={`${styles.title} ${isVisible ? styles.visible : ''}`}>
-          Mis <span className="gradient-text">Skills</span>
+          Mis <span className="gradient-text">Habilidades</span>
         </h2>
         <p className={`${styles.subtitle} ${isVisible ? styles.visible : ''}`}>
           Tecnologías y herramientas que uso para construir soluciones modernas
