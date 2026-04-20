@@ -1,5 +1,6 @@
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   position: relative;
@@ -54,6 +55,7 @@
 
 .content {
   max-width: 800px;
+  min-height: 400px;
   animation: fadeInUp 1s ease-out forwards;
 }
 
