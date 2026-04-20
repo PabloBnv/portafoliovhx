@@ -25,6 +25,7 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Fecha | Cambio | Descripción |
 |-------|--------|-------------|
+| 20/04/2026 | Critical Path | Agregado preconnect/dns-prefetch para Tawk.to |
 | 20/04/2026 | CLS Optimization | Agregado font-size/line-height explícitos, min-height en Hero |
 | 20/04/2026 | LCP Optimization | Migrado Outfit de CSS externo a next/font/google |
 | 20/04/2026 | Lint Warning | Eliminado Code2 sin usar en Skills.tsx |
@@ -156,9 +157,9 @@ El proyecto **portafoliovhx** es un portafolio personal para mostrar proyectos M
 
 | Archivo | Cambio |
 |---------|--------|
+| `src/app/layout.tsx` | Agregado preconnect/dns-prefetch para Tawk.to, Outfit |
 | `src/app/globals.css` | Agregado font-size/line-height explícitos para CLS |
 | `src/components/Hero.module.css` | Agregado min-height y 100dvh |
-| `src/app/layout.tsx` | Agregado Outfit via next/font/google |
 | `src/components/Skills.tsx` | Eliminado import Code2 sin usar |
 | `src/components/Contact.tsx` | Actualizado email, LinkedIn, eliminado X |
 | `src/components/Hero.tsx` | Link al CV, optimización de imagen |

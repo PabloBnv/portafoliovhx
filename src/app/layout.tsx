@@ -22,6 +22,10 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portafoliovhx.netlify.app"),
+  other: {
+    'preconnect': 'https://embed.tawk.to',
+    'dns-prefetch': 'https://embed.tawk.to',
+  },
   title: {
     default: "Vhx | Full-Stack Developer",
     template: "%s | Vhx",
