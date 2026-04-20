@@ -57,14 +57,14 @@ const Contact = () => {
               <div className={styles.metaItem}>
                 <div className={styles.iconWrapper}><Mail size={20} /></div>
                 <div>
-                  <h4>Email</h4>
+                  <h3>Email</h3>
                   <p>bnvpablo@gmail.com</p>
                 </div>
               </div>
               <div className={styles.metaItem}>
                 <div className={styles.iconWrapper}><MapPin size={20} /></div>
                 <div>
-                  <h4>Ubicación</h4>
+                  <h3>Ubicación</h3>
                   <p>Buenos Aires, Argentina</p>
                 </div>
               </div>

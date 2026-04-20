@@ -25,25 +25,34 @@ const Navbar = () => {
     // Background effect
     setIsScrolled(currentScrollY > 20);
     setLastScrollY(currentScrollY);
-
-    // Active section
-    const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          setActiveSection(section);
-          break;
-        }
-      }
-    }
   }, [lastScrollY]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
+
+  // Active section - separate effect to avoid forced reflows
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 

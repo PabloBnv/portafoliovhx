@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Inter, JetBrains_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -85,6 +86,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable} ${outfit.variable}`}>
+      <Head>
+        <link rel="preconnect" href="https://embed.tawk.to" />
+        <link rel="dns-prefetch" href="https://embed.tawk.to" />
+      </Head>
       <body>
         {children}
       </body>
