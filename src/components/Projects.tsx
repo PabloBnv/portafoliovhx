@@ -43,7 +43,7 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'Java', 'Spring Boot'],
       github: 'https://github.com/PabloBnv/ecommercevhx',
       demo: 'https://ecommercevhx.netlify.app/',
-      image: 'ecommerce'
+      image: '/miniaturaecommercevhx.png'
     },
     {
       title: 'ERP Genérico',
@@ -79,8 +79,8 @@ const Projects = () => {
               className={`${styles.card} ${cardsVisible[index] ? styles.visible : styles.hidden}`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className={styles.imagePlaceholder}>
-                <Folder size={40} className={styles.folderIcon} />
+              <div className={styles.imagePlaceholder} style={{ backgroundImage: project.image ? `url(${project.image})` : undefined, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                {!project.image && <Folder size={40} className={styles.folderIcon} />}
                 <div className={styles.projectOverlay}>
                   <div className={styles.overlayLinks}>
                     <a href={project.github} aria-label="Ver en GitHub" target="_blank" rel="noopener noreferrer">
