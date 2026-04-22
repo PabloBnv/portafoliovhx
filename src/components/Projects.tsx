@@ -41,8 +41,8 @@ const Projects = () => {
       title: 'Ecommerce Genérico',
       description: 'Plataforma de comercio electrónico con catálogo de productos, carrito de compras y gestión de pedidos en tiempo real.',
       tech: ['React', 'TypeScript', 'Java', 'Spring Boot'],
-      github: 'https://github.com/PabloBnv/ecommerce-generico',
-      demo: '#',
+      github: 'https://github.com/PabloBnv/ecommercevhx',
+      demo: 'https://ecommercevhx.netlify.app/',
       image: 'ecommerce'
     },
     {
